@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>The Baked | Premium Pastries</title>
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="navbar">
+                <div class="logo">
+            <h1>The Baked</h1>
+        </div>
+
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                  <li><a href="cart.html" class="cart-link">Cart (<span id="cart-count">0</span>)</a></li>
+                 
+
+            </ul>
+        </nav>
+        <div class="hamburger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <main>
+               <section class="page-header">
+        <h2>Get In Touch</h2>
+        <p>Visit our bakery or send us a message for custom orders.</p>
+    </section>
+
+    <section class="contact-section">
+        <div class="contact-container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; max-width: 1200px; margin: 0 auto;">
+            
+            <div class="contact-info-map">
+                <div class="info-box" style="margin-bottom: 2rem;">
+                    <h3 style="color: var(--clr-gold); margin-bottom: 1rem;">Visit Us</h3>
+                    <p><strong>The Baked Artisan Bakery</strong></p>
+                    <p>123 Pastry Lane, Sector 15, Chandigarh</p>
+                    <p>Phone: +91 98765 43210</p>
+                    <p>Email: hello@thebaked.com</p>
+                </div>
+
+                <div class="map-frame" style="border-radius: 8px; overflow: hidden; height: 350px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3423.123456789!2d76.779417!3d30.7333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390fed0be6da4527%3A0x70eb34005cf39366!2sChandigarh!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="contact-form-area" style="background: #fff; padding: 2.5rem; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+                <h3 style="color: var(--clr-gold); margin-bottom: 1.5rem;">Send a Message</h3>
+                <form id="contact-us-form">
+                    <div class="form-group" style="margin-bottom: 1.5rem;">
+                        <label>Your Name</label>
+                        <input type="text" id="con-name" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px;">
+                    </div>
+                    <div class="form-group" style="margin-bottom: 1.5rem;">
+                        <label>Email Address</label>
+                        <input type="email" id="con-email" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px;">
+                    </div>
+                    <div class="form-group" style="margin-bottom: 1.5rem;">
+                        <label>Subject</label>
+                        <select id="con-subject" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px;">
+                            <option>General Inquiry</option>
+                            <option>Custom Cake Order</option>
+                            <option>Bulk/Catering</option>
+                            <option>Feedback</option>
+                        </select>
+                    </div>
+                    <div class="form-group" style="margin-bottom: 1.5rem;">
+                        <label>Message</label>
+                        <textarea id="con-message" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; height: 120px;"></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary" style="width: 100%;">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+
+
+        </main>
+
+        <footer class="footer">
+        <div class="footer-container">
+                        <div class="footer-section">
+                <h3>The Baked</h3>
+                <p>Elevating the art of baking, one pastry at a time.</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Visit Us</h4>
+                <p>123 Bakery Lane, Pastry City</p>
+                <p>Open Daily: 7am - 7pm</p>
+            </div>
+        </div>
+                <div class="footer-bottom">
+            <p>&copy; 2026 The Baked. Designed for excellence.</p>
+        </div>
+  
+    </footer>
+
+
+    <script src="js/script.js"></script>
+</body>
+</html>

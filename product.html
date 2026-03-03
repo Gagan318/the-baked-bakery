@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>The Baked | Premium Pastries</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="navbar">
+                <div class="logo">
+            <h1>The Baked</h1>
+        </div>
+
+</div>
+
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="cart.html" class="cart-link">Cart (<span id="cart-count">0</span>)</a></li>
+
+            </ul>
+        </nav>
+        <div class="hamburger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+        <main>
+        <section class="product-details-section">
+            <div class="product-container">
+                <div class="product-image-area">
+                    <img id="detail-image" src="" alt="Product Image">
+                </div>
+
+                <div class="product-info-area">
+                    <h2 id="detail-name">Loading...</h2>
+                    <p class="product-price" id="detail-price">₹0</p>
+                    <p class="product-description" id="detail-description">Please wait while we load the product details.</p>
+                    
+                    <div class="quantity-selector">
+                               <div style="display: flex; flex-direction: column; gap: 20px; width: 100%; max-width: 450px; margin-top: 15px;">
+            
+            <div class="quantity-selector" style="display: flex; align-items: center; gap: 15px;">
+                <span style="font-weight: 700; color: #2C2C2C; font-size: 1.1rem;">Quantity:</span>
+                
+                <div style="display: flex; align-items: center; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.05); height: 46px;">
+                    <button type="button" onclick="var q = document.getElementById('product-quantity'); if(q.value > 1) q.value--;" style="background: #fdfdfd; border: none; padding: 0 18px; height: 100%; cursor: pointer; font-size: 1.4rem; color: #333; border-right: 1px solid #ddd;">-</button>
+                    <input type="number" id="product-quantity" value="1" min="1" readonly style="width: 50px; height: 100%; text-align: center; border: none; font-size: 1.2rem; font-weight: bold; color: #C49A45; background: #fff; outline: none; pointer-events: none; margin: 0;">
+                    <button type="button" onclick="document.getElementById('product-quantity').value++;" style="background: #fdfdfd; border: none; padding: 0 18px; height: 100%; cursor: pointer; font-size: 1.4rem; color: #333; border-left: 1px solid #ddd;">+</button>
+                </div>
+            </div>
+
+            <div class="product-actions" style="display: flex; gap: 15px; width: 100%;">
+                <button id="detail-add-btn" class="add-to-cart-btn" style="flex: 1; padding: 15px 0; font-size: 0.95rem; font-weight: bold; border-radius: 8px;">ADD TO CART</button>
+                <button id="detail-buy-btn" class="buy-now-btn" style="flex: 1; padding: 15px 0; font-size: 0.95rem; font-weight: bold; border-radius: 8px;">BUY NOW</button>
+            </div>
+            
+        </div>
+
+
+                </div>
+            </div>
+        </section>
+
+       <div class="reviews-container">
+    <h3>Customer Reviews</h3>
+    
+    <div class="add-review-form" style="margin-bottom: 3rem; background: #fff; padding: 2rem; border-radius: 8px;">
+        <h4>Leave a Review</h4>
+        <form id="review-submit-form">
+            <input type="text" id="review-name" placeholder="Your Name" required style="width: 100%; padding: 10px; margin-bottom: 10px;">
+            <select id="review-rating" style="width: 100%; padding: 10px; margin-bottom: 10px;">
+                <option value="5">5 Stars - Excellent</option>
+                <option value="4">4 Stars - Very Good</option>
+                <option value="3">3 Stars - Good</option>
+                <option value="2">2 Stars - Fair</option>
+                <option value="1">1 Star - Poor</option>
+            </select>
+            <textarea id="review-text" placeholder="Share your thoughts..." required style="width: 100%; padding: 10px; margin-bottom: 10px; height: 80px;"></textarea>
+            <button type="submit" class="btn-primary" style="width: 100%;">Post Review</button>
+        </form>
+    </div>
+
+    <div id="dynamic-reviews-list">
+        </div>
+</div>
+
+    </main>
+
+
+        <footer class="footer">
+        <div class="footer-container">
+                       <div class="footer-section">
+                <h3>The Baked</h3>
+                <p>Elevating the art of baking, one pastry at a time.</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Visit Us</h4>
+                <p>123 Bakery Lane, Pastry City</p>
+                <p>Open Daily: 7am - 7pm</p>
+            </div>
+        </div>
+                <div class="footer-bottom">
+            <p>&copy; 2026 The Baked. Designed for excellence.</p>
+        </div>
+
+    </footer>
+
+
+    <script src="js/script.js"></script>
+</body>
+</html>

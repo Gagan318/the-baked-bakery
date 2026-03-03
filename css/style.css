@@ -1,0 +1,932 @@
+/* --- 1. DESIGN SYSTEM (Variables) --- */
+:root {
+    /* Premium Color Palette */
+    --clr-dark: #1A1A1A;     /* Deep charcoal for text and backgrounds */
+    --clr-gold: #D4AF37;     /* Elegant metallic gold for accents */
+    --clr-light: #FAFAFA;    /* Soft off-white for backgrounds */
+    --clr-white: #FFFFFF;
+    
+    /* Typography */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Lato', sans-serif;
+}
+
+/* --- 2. GLOBAL RESET --- */
+/* This removes default browser margins so we have full control */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--clr-light);
+    color: var(--clr-dark);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+    color: var(--clr-dark);
+    transition: color 0.3s ease; /* Smooth hover animation */
+}
+/* --- 3. NAVIGATION BAR --- */
+.navbar {
+    display: flex; /* Activates Flexbox */
+    justify-content: space-between; /* Pushes logo left, navigation right */
+    align-items: center; /* Centers items vertically */
+    padding: 1.5rem 5%;
+    background-color: var(--clr-white);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Adds a soft drop shadow */
+    position: fixed; /* Keeps navbar at the top when scrolling */
+    width: 100%;
+    top: 0;
+    z-index: 1000; /* Ensures the navbar stays above all other content */
+}
+
+.logo h1 {
+    color: var(--clr-gold);
+    font-size: 2rem;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    list-style: none; /* Removes the default bullet points */
+    display: flex;
+    gap: 2rem; /* Creates exact spacing between the links */
+}
+
+.nav-links a {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+/* Premium Hover Animation */
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--clr-gold);
+}
+
+/* We will hide the mobile hamburger menu on desktop screens for now */
+.hamburger-menu {
+    display: none;
+}
+/* --- 4. HERO SECTION --- */
+.hero {
+    /* The linear-gradient creates a 70% dark overlay on top of your image */
+    background: linear-gradient(rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.7)), 
+                url('../assets/hero-bakery.jpg');
+    background-size: cover; /* Ensures the image covers the whole section */
+    background-position: center; /* Keeps the most important part of the image centered */
+    min-height: 100vh; /* Forces the section to be exactly 100% of the screen height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero-content {
+    color: var(--clr-white);
+    max-width: 800px;
+    margin-top: 80px; /* Pushes the text down slightly so the fixed navbar doesn't cover it */
+}
+
+.hero-content h2 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    color: var(--clr-gold);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+}
+
+/* Premium Button Styling */
+.btn-primary {
+    display: inline-block;
+    padding: 15px 40px;
+    background-color: var(--clr-gold);
+    color: var(--clr-white);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: 2px solid var(--clr-gold);
+    border-radius: 4px; /* Slight rounding for a modern look */
+}
+
+/* Button Hover Animation */
+.btn-primary:hover {
+    background-color: transparent; /* Makes the button hollow */
+    color: var(--clr-gold);
+}
+/* --- 5. MENU SECTION --- */
+.menu-section {
+    padding: 5rem 5%;
+    background-color: var(--clr-white); /* Clean white background */
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-title h2 {
+    font-size: 2.5rem;
+    color: var(--clr-gold);
+    margin-bottom: 0.5rem;
+}
+
+/* The Magic of CSS Grid */
+.menu-grid {
+    display: grid;
+    /* This next line automatically creates columns that are at least 300px wide, 
+       and expands them to fill available space. It's fully responsive! */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+}
+
+/* Premium Card Design */
+.menu-card {
+    background-color: var(--clr-light);
+    border-radius: 8px;
+    overflow: hidden; /* Keeps the image inside the rounded corners */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05); /* Very subtle, soft shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Card Hover Animation - Makes the card "lift" up when you hover over it */
+.menu-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+/* Styling the image placeholder */
+.card-image {
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+}
+
+.card-content {
+    padding: 2rem;
+    text-align: center;
+}
+
+.card-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.price {
+    font-size: 1.2rem;
+    color: var(--clr-gold);
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+/* Secondary Button Styling */
+.btn-secondary {
+    padding: 10px 25px;
+    background-color: transparent;
+    color: var(--clr-dark);
+    border: 1px solid var(--clr-dark);
+    font-family: var(--font-body);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: var(--clr-dark);
+    color: var(--clr-white);
+}
+/* --- 6. RESPONSIVE DESIGN (MOBILE VIEW) --- */
+@media screen and (max-width: 768px) {
+    /* Hide the normal links by pushing them off the right side of the screen */
+    .nav-links {
+        position: absolute;
+        right: 0px;
+        height: 92vh; /* Fills the height of the screen minus the navbar */
+        top: 8vh;
+        background-color: var(--clr-white);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        transform: translateX(100%); /* Pushes it completely out of view */
+        transition: transform 0.4s ease-in-out; /* Smooth sliding animation */
+    }
+
+    /* We will use JavaScript to add this class when the button is clicked */
+    .nav-links.nav-active {
+        transform: translateX(0%); /* Slides the menu back into view */
+    }
+
+    /* Show the hamburger menu icon */
+    .hamburger-menu {
+        display: block;
+        cursor: pointer;
+    }
+
+    /* Styling the 3 lines of the hamburger icon */
+    .hamburger-menu span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px;
+        background-color: var(--clr-dark);
+        transition: all 0.3s ease;
+    }
+
+    /* Classes to animate the hamburger into an 'X' */
+    .toggle .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    .toggle .line2 {
+        opacity: 0; /* Hides the middle line */
+    }
+    .toggle .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+}
+/* --- 7. FOOTER SECTION --- */
+.footer {
+    background-color: var(--clr-dark);
+    color: var(--clr-light);
+    padding: 4rem 5% 1rem; /* Top padding, side padding, bottom padding */
+    margin-top: 4rem; /* Pushes it away from the content above it */
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.footer-section h3 {
+    color: var(--clr-gold);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
+
+.footer-section h4 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--clr-white);
+}
+
+.footer-section ul {
+    list-style: none; /* Removes bullet points */
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+/* Footer Links Styling */
+.footer-section a {
+    color: var(--clr-light);
+    opacity: 0.8;
+}
+
+.footer-section a:hover {
+    color: var(--clr-gold);
+    opacity: 1;
+}
+
+/* The copyright line at the very bottom */
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* A very faint line separator */
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+/* --- 8. INTERNAL PAGE HEADERS --- */
+.page-header {
+    /* We add extra padding at the top so the fixed navbar doesn't cover the text */
+    padding: 8rem 5% 4rem; 
+    text-align: center;
+    background-color: var(--clr-dark);
+    color: var(--clr-white);
+}
+
+.page-header h2 {
+    color: var(--clr-gold);
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+}
+/* --- 9. CONTACT SECTION --- */
+.contact-section {
+    padding: 5rem 5%;
+    background-color: var(--clr-light);
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 4rem;
+    max-width: 1000px;
+    margin: 0 auto; /* Centers the whole block on the page */
+}
+
+.contact-info h3 {
+    font-size: 2rem;
+    color: var(--clr-gold);
+    margin-bottom: 1.5rem;
+}
+
+.contact-info p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+/* Form Layout */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+/* Styling the Input Boxes */
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    background-color: var(--clr-white);
+    transition: all 0.3s ease;
+}
+
+/* Premium Focus Effect */
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--clr-gold);
+    box-shadow: 0 0 8px rgba(212, 175, 55, 0.3); /* Soft gold glow */
+}
+/* --- 10. CART SECTION --- */
+.cart-section {
+    padding: 5rem 5%;
+    background-color: var(--clr-light);
+}
+
+.cart-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* 2 parts for items, 1 part for summary */
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Individual Cart Item Styling */
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--clr-white);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.cart-item-details h4 {
+    font-size: 1.2rem;
+    color: var(--clr-dark);
+}
+
+.cart-item-price {
+    font-weight: 700;
+    color: var(--clr-gold);
+    font-size: 1.1rem;
+}
+
+/* Order Summary Box */
+.cart-summary {
+    background-color: var(--clr-white);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    height: fit-content; /* Stops the box from stretching too tall */
+}
+
+.cart-summary h3 {
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--clr-light);
+    padding-bottom: 0.5rem;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.total-row {
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: var(--clr-gold);
+    border-top: 2px solid var(--clr-light);
+    padding-top: 1rem;
+    margin-top: 1rem;
+}
+
+/* Make it stack on small screens */
+@media screen and (max-width: 768px) {
+    .cart-container {
+        grid-template-columns: 1fr; /* Stacks items on top of summary */
+    }
+}
+/* Remove Item Button */
+.remove-btn {
+    background: none;
+    border: none;
+    color: #e74c3c; /* A soft red color */
+    font-size: 0.85rem;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    font-family: var(--font-body);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.remove-btn:hover {
+    color: var(--clr-dark);
+    text-decoration: underline;
+}
+
+/* --- 11. CHECKOUT SECTION --- */
+.checkout-section {
+    padding: 5rem 5%;
+    background-color: var(--clr-light);
+}
+
+.checkout-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.checkout-form-area, .checkout-summary-area {
+    background-color: var(--clr-white);
+    padding: 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.checkout-form-area h3, .checkout-summary-area h3 {
+    margin-bottom: 1.5rem;
+    color: var(--clr-gold);
+    border-bottom: 2px solid var(--clr-light);
+    padding-bottom: 0.5rem;
+}
+
+/* Form Layout */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.payment-options {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.payment-method {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: border 0.3s;
+}
+
+.payment-method:hover {
+    border-color: var(--clr-gold);
+}
+
+/* Mini Cart List in Checkout */
+.checkout-mini-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px dashed #eee;
+}
+
+@media screen and (max-width: 900px) {
+    .checkout-container, .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+/* --- 12. CUSTOM POP-UP MODAL --- */
+.custom-modal-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999; 
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.custom-modal-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.custom-modal-box {
+    background: var(--clr-white);
+    padding: 3rem 2rem;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 450px;
+    width: 90%;
+    transform: translateY(-30px);
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.custom-modal-overlay.show .custom-modal-box {
+    transform: translateY(0);
+}
+
+.custom-modal-box h3 {
+    color: var(--clr-gold);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.custom-modal-box p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: var(--clr-dark);
+}
+/* --- 13. PRODUCT DETAILS PAGE --- */
+.product-details-section {
+    padding: 8rem 5% 4rem; /* Extra top padding for the fixed navbar */
+    background-color: var(--clr-white);
+}
+
+.product-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.product-image-area img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.product-info-area h2 {
+    font-size: 3rem;
+    color: var(--clr-gold);
+    margin-bottom: 1rem;
+}
+
+.product-price {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.product-description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+
+/* Quantity Input Styling */
+.quantity-selector {
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.quantity-selector input {
+    width: 60px;
+    padding: 10px;
+    font-size: 1.1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.product-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Reviews Styling */
+.reviews-section {
+    padding: 4rem 5%;
+    background-color: var(--clr-light);
+}
+
+.reviews-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.reviews-container h3 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--clr-gold);
+}
+
+.review-card {
+    background: var(--clr-white);
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.stars {
+    color: var(--clr-gold);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+@media screen and (max-width: 768px) {
+    .product-container {
+        grid-template-columns: 1fr;
+    }
+}
+/* --- 14. MASONRY GALLERY --- */
+.gallery-section {
+    padding: 5rem 5%;
+    background-color: var(--clr-white);
+}
+
+.gallery-container {
+    /* This creates 3 columns on desktop */
+    column-count: 3;
+    column-gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    position: relative;
+    margin-bottom: 1.5rem;
+    break-inside: avoid; /* Essential: prevents images from splitting between columns */
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.gallery-item img {
+    width: 100%;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+/* Hover Zoom Effect */
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+/* The dark overlay text that appears on hover */
+.gallery-item .overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .overlay {
+    opacity: 1;
+}
+
+.gallery-item .overlay span {
+    color: var(--clr-gold);
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    border: 1px solid var(--clr-gold);
+    padding: 10px 20px;
+}
+
+/* Responsive: 2 columns for tablets, 1 for mobile */
+@media screen and (max-width: 900px) {
+    .gallery-container { column-count: 2; }
+}
+@media screen and (max-width: 600px) {
+    .gallery-container { column-count: 1; }
+}
+/* --- LUXURY MOBILE CARD & BUTTON FIX --- */
+
+/* 1. Make the cards WIDER so they look grand on the phone */
+.menu-card {
+    width: 100% !important; 
+    max-width: 420px !important; /* Allows it to be much wider on phones */
+    margin: 0 auto 35px auto !important; 
+    background: #fff !important;
+    border-radius: 16px !important; 
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08) !important;
+    overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+/* 2. Reduce the side margins of the page so cards can expand */
+#dynamic-menu-grid, .featured-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important; 
+    gap: 30px !important;
+    padding: 20px 15px !important; /* Reduced side padding so cards stretch more */
+    max-width: 1300px !important; 
+    margin: 0 auto !important;
+    justify-content: center !important;
+}
+
+/* 3. Taller, premium images to match the wider card */
+.card-image {
+    width: 100% !important;
+    height: 280px !important; /* Taller image! */
+    object-fit: cover !important; 
+    object-position: center !important; 
+    display: block !important;
+}
+
+.card-content {
+    padding: 20px !important;
+    text-align: center !important;
+}
+
+/* 4. FIX THE BUTTON MESS (Stops text from spilling out) */
+.card-content div {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 12px !important;
+    justify-content: center !important;
+    margin-top: 15px !important;
+}
+
+.add-to-cart-btn, .buy-now-btn {
+    flex: 1 1 auto !important; 
+    padding: 12px 20px !important; /* More breathing room inside the button */
+    font-size: 0.9rem !important; 
+    font-weight: 700 !important;
+    border-radius: 8px !important;
+    text-transform: uppercase !important;
+    min-width: max-content !important; /* CRITICAL FIX: Never lets the button shrink smaller than its text */
+    box-sizing: border-box !important;
+}
+
+/* 5. Product Page Image Fix */
+#detail-image {
+    width: 100% !important;
+    max-width: 450px !important;
+    height: 400px !important;
+    object-fit: cover !important;
+    border-radius: 16px !important;
+    margin: 0 auto 25px auto !important;
+    display: block !important;
+}
+/* --- PREMIUM LUXURY COLOR SYNC --- */
+
+/* Define the exact luxury palette */
+:root {
+    --clr-luxury-gold: #C49A45 !important; /* A deeper, more sophisticated French gold */
+    --clr-luxury-dark: #2C2C2C !important; /* Charcoal instead of harsh pure black */
+    --clr-luxury-border: #E5E5E5 !important; /* Very soft gray for borders */
+}
+
+/* 1. TYPOGRAPHY: All titles and headers become dark and elegant */
+.card-content h3, 
+#detail-name, 
+.page-header h2, 
+h2, h3 {
+    color: var(--clr-luxury-dark) !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.5px !important;
+}
+
+/* 2. ACCENTS: Only prices and specific highlights get the gold */
+.price, 
+#detail-price {
+    color: var(--clr-luxury-gold) !important;
+    font-weight: 700 !important;
+    font-size: 1.15rem !important;
+    margin-bottom: 15px !important;
+}
+
+/* 3. PRIMARY BUTTON (Buy Now): Solid luxury gold with crisp white text */
+.buy-now-btn {
+    background-color: var(--clr-luxury-gold) !important;
+    color: #ffffff !important;
+    border: 1px solid var(--clr-luxury-gold) !important;
+    box-shadow: 0 4px 10px rgba(196, 154, 69, 0.2) !important; /* Subtle gold glow */
+    transition: all 0.3s ease !important;
+}
+
+.buy-now-btn:hover {
+    background-color: #A88238 !important; /* Slightly darker gold on hover */
+}
+
+/* 4. SECONDARY BUTTON (Add to Cart): Clean white with soft border */
+.add-to-cart-btn {
+    background-color: #ffffff !important;
+    color: var(--clr-luxury-dark) !important;
+    border: 1px solid var(--clr-luxury-border) !important;
+    transition: all 0.3s ease !important;
+}
+
+.add-to-cart-btn:hover {
+    border-color: var(--clr-luxury-dark) !important;
+}
+
+/* 5. SEARCH BAR: Soften the gold border to match the premium vibe */
+#search-input {
+    border: 1px solid var(--clr-luxury-border) !important;
+}
+
+#search-input:focus {
+    border: 1px solid var(--clr-luxury-gold) !important;
+    outline: none !important;
+}
+/* --- DARK SECTION TEXT RECOVERY --- */
+/* Fixes text that became invisible on dark backgrounds */
+
+/* 1. Hero Section (Home Page) */
+.hero h2, 
+.hero h3, 
+.hero-content h2 {
+    color: #ffffff !important; /* Bright white for maximum contrast */
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5) !important; /* Adds a subtle shadow to pop against images */
+}
+
+/* 2. Page Headers (Like "Our Full Menu") */
+.page-header h2, 
+.page-header h3 {
+    color: var(--clr-luxury-gold) !important; /* Premium gold on the dark header */
+}
+
+/* 3. Footer Elements */
+footer h2, 
+footer h3, 
+footer .logo,
+.footer h2 {
+    color: var(--clr-luxury-gold) !important; /* Brings the Lumière logo back */
+}
+/* --- MAKE HERO TEXT GOLD --- */
+.hero h1,
+.hero h2, 
+.hero-content h1,
+.hero-content h2 {
+    color: var(--clr-luxury-gold) !important; 
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5) !important; /* Keeps a dark shadow behind it so it's easy to read */
+}
+/* --- LUXURY LOGO STYLING --- */
+.logo h1, 
+.footer-section h3 {
+    text-transform: uppercase !important;
+    letter-spacing: 2px !important; /* Adds that expensive breathing room between letters */
+}
+
+
+

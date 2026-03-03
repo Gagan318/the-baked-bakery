@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>The Baked | Premium Pastries</title>
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="navbar">
+                <div class="logo">
+            <h1>The Baked</h1>
+        </div>
+
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="cart.html" class="cart-link">Cart (<span id="cart-count">0</span>)</a></li>
+
+
+            </ul>
+        </nav>
+        <div class="hamburger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Artisan Baking, Elevated.</h2>
+                <p>Experience the finest pastries crafted with passion and premium ingredients.</p>
+                <a href="menu.html" class="btn-primary">Explore Our Menu</a>
+            </div>
+        </section>
+                        <section id="menu" class="menu-section">
+            <div class="section-title">
+                <h2>Featured Pastries</h2>
+                <p>Handcrafted daily with the finest ingredients.</p>
+            </div>
+            
+                        <div class="menu-grid">
+                <div class="menu-card">
+                    <a href="product.html?id=croissant" style="text-decoration: none; display: block; width: 100%;">
+                        <div class="card-image" style="background-image: url('assets/croissant.jpg'); cursor: pointer;"></div>
+                    </a>
+                    <div class="card-content">
+                        <a href="product.html?id=croissant" style="text-decoration: none;">
+                            <h3>Classic Butter Croissant</h3>
+                            <p class="price">₹150</p>
+                        </a>
+                        <div style="display: flex; gap: 10px; justify-content: center; margin-top: 15px;">
+                            <button class="add-to-cart-btn" data-name="Classic Butter Croissant" data-price="150">ADD TO CART</button>
+                            <button class="buy-now-btn" data-name="Classic Butter Croissant" data-price="150">BUY NOW</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-card">
+                    <a href="product.html?id=tart" style="text-decoration: none; display: block; width: 100%;">
+                        <div class="card-image" style="background-image: url('assets/tart.jpg'); cursor: pointer;"></div>
+                    </a>
+                    <div class="card-content">
+                        <a href="product.html?id=tart" style="text-decoration: none;">
+                            <h3>Raspberry Fruit Tart</h3>
+                            <p class="price">₹220</p>
+                        </a>
+                        <div style="display: flex; gap: 10px; justify-content: center; margin-top: 15px;">
+                            <button class="add-to-cart-btn" data-name="Raspberry Fruit Tart" data-price="220">ADD TO CART</button>
+                            <button class="buy-now-btn" data-name="Raspberry Fruit Tart" data-price="220">BUY NOW</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-card">
+                    <a href="product.html?id=truffle" style="text-decoration: none; display: block; width: 100%;">
+                        <div class="card-image" style="background-image: url('assets/cake.jpg'); cursor: pointer;"></div>
+                    </a>
+                    <div class="card-content">
+                        <a href="product.html?id=truffle" style="text-decoration: none;">
+                            <h3>Dark Chocolate Truffle</h3>
+                            <p class="price">₹180</p>
+                        </a>
+                        <div style="display: flex; gap: 10px; justify-content: center; margin-top: 15px;">
+                            <button class="add-to-cart-btn" data-name="Dark Chocolate Truffle" data-price="180">ADD TO CART</button>
+                            <button class="buy-now-btn" data-name="Dark Chocolate Truffle" data-price="180">BUY NOW</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+                
+        </section>
+
+
+
+        </main>
+
+        <footer class="footer">
+        <div class="footer-container">
+                       <div class="footer-section">
+                <h3>The Baked</h3>
+                <p>Elevating the art of baking, one pastry at a time.</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Visit Us</h4>
+                <p>123 Bakery Lane, Pastry City</p>
+                <p>Open Daily: 7am - 7pm</p>
+            </div>
+        </div>
+               <div class="footer-bottom">
+            <p>&copy; 2026 The Baked. Designed for excellence.</p>
+        </div>
+
+    </footer>
+
+
+    <script src="js/script.js"></script>
+</body>
+</html>
